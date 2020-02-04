@@ -9,7 +9,7 @@ when
 then
 	System.out.println(kcontext.getRule().getName() + " fired!!!");
 	modify($i){
-		setCategory(Category.LOW_RANGE),
+		setCategory(Category.LOW_RANGE)
 		//setCost($i.getCost() * 0.9) // in Drools v7 we have to update the attribute(s) used in the condition
 	}
 end
