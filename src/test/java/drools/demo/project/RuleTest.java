@@ -56,6 +56,8 @@ public class RuleTest {
 
         LOG.info("Creating kieSession");
         KieSession session = kieBase.newKieSession();
+        // session.getAgenda().getAgendaGroup("withoutNoLoop").setFocus();
+
         LOG.info("Feeding kieSession");
         Item item1 = new Item("A", 123.0, 150.0);
         LOG.info("Item category {}", item1.getCategory().toString());

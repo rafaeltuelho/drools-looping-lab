@@ -9,16 +9,19 @@ when
 then
 	System.out.println(kcontext.getRule().getName() + " fired!!!");
 	modify($i){
-		setCategory(Category.LOW_RANGE);
+		setCategory(Category.LOW_RANGE),
+		//setCost($i.getCost() * 0.9) // in Drools v7 we have to update the attribute(s) used in the condition
 	}
 end
 
 rule "Apply discount on Low Range Item"
+//enabled false
 when
 	$i: Item(category == Category.LOW_RANGE)
 then
 	System.out.println(kcontext.getRule().getName() + " fired!!!");
 	modify($i){
-		setSalePrice($i.getSalePrice()*0.9);
+		setCategory(Category.LOW_RANGE),
+		setSalePrice($i.getSalePrice() * 0.9) // in Drools v7 we have to update the attribute(s) used in the condition
 	}
 end
